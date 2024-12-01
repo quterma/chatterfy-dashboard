@@ -1,5 +1,12 @@
+import { DataServiceProvider } from './context/DataServiceContext';
+import { Layout } from './components/Layout/Layout';
+
 function App() {
-  return <div className="App">App</div>;
+  return (
+    <DataServiceProvider>
+      <Layout />
+    </DataServiceProvider>
+  );
 }
 
 export default App;
