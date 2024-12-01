@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Исходные CSV
+data/raw/
+
+# Сгенерированные JSON
+src/data/
