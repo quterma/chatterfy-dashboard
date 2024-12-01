@@ -1,5 +1,5 @@
 import { JsonDataService } from './JsonDataService';
-import { Filters, Usage, Cost, GraphData, CostsRecord } from './types';
+import { Usage, Cost, GraphData, CostsRecord } from '../types/types';
 
 const mockUsages: Usage[] = [
   {

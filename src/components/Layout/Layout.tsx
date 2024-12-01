@@ -1,4 +1,4 @@
-import { Filters } from '../Filters/Filters';
+import { FiltersComponent } from '../FiltersComponent/FiltersComponent';
 import { Graph } from '../Graph/Graph';
 
 export const Layout: React.FC = () => {
@@ -15,17 +15,12 @@ export const Layout: React.FC = () => {
         </div>
       </header>
 
-      <main className="flex-1 p-1 sm:p-4 grid gap-4 md:grid-cols-4">
-        <aside
-          className="col-span-full md:col-span-1 bg-gray-50 p-4 rounded shadow min-w-[200px]"
-          data-testid="filters"
-        >
-          <Filters />
+      <main className="flex flex-1 p-4 flex-col md:flex-row gap-4">
+        <aside className="flex-shrink-0 md:w-1/4 bg-gray-50 p-4 rounded shadow min-w-[200px]">
+          <FiltersComponent />
         </aside>
-        <section
-          className="col-span-full md:col-span-3 bg-white p-4 rounded shadow min-h-[300px]"
-          data-testid="graph"
-        >
+
+        <section className="flex-1 bg-white p-4 rounded shadow min-h-[300px]">
           <Graph />
         </section>
       </main>

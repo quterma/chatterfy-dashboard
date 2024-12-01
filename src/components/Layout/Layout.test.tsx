@@ -1,9 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import { Layout } from './Layout';
+import { DataServiceProvider } from '../../context/DataServiceContext';
 
 describe('Layout Component', () => {
   it('renders header with title and subtitle', () => {
-    render(<Layout />);
+    render(
+      <DataServiceProvider>
+        <Layout />
+      </DataServiceProvider>
+    );
 
     expect(screen.getByText('Usage Analytics')).toBeInTheDocument();
     expect(
@@ -12,14 +17,22 @@ describe('Layout Component', () => {
   });
 
   it('renders filters and graph sections', () => {
-    render(<Layout />);
+    render(
+      <DataServiceProvider>
+        <Layout />
+      </DataServiceProvider>
+    );
 
-    expect(screen.getByTestId('filters')).toBeInTheDocument();
-    expect(screen.getByTestId('graph')).toBeInTheDocument();
+    expect(screen.getByText('Type')).toBeInTheDocument();
+    expect(screen.getByText('Graph Component')).toBeInTheDocument();
   });
 
   it('renders footer with GitHub link', () => {
-    render(<Layout />);
+    render(
+      <DataServiceProvider>
+        <Layout />
+      </DataServiceProvider>
+    );
     const footer = screen.getByText('GitHub');
 
     expect(footer).toBeInTheDocument();

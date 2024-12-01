@@ -1,5 +1,5 @@
 import { DataServiceInterface } from './DataServiceInterface';
-import { Filters, Usage, Cost, CostsRecord, GraphData } from './types';
+import { Filters, Usage, Cost, CostsRecord, GraphData } from '../types/types';
 
 export class JsonDataService implements DataServiceInterface {
   private usages: Usage[];
