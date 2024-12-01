@@ -1,14 +1,16 @@
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { Layout } from './Layout';
 import { DataServiceProvider } from '../../context/DataServiceContext';
 
 describe('Layout Component', () => {
-  it('renders header with title and subtitle', () => {
-    render(
-      <DataServiceProvider>
-        <Layout />
-      </DataServiceProvider>
-    );
+  it('renders header with title and subtitle', async () => {
+    await act(async () => {
+      render(
+        <DataServiceProvider>
+          <Layout />
+        </DataServiceProvider>
+      );
+    });
 
     expect(screen.getByText('Usage Analytics')).toBeInTheDocument();
     expect(
@@ -16,23 +18,27 @@ describe('Layout Component', () => {
     ).toBeInTheDocument();
   });
 
-  it('renders filters and graph sections', () => {
-    render(
-      <DataServiceProvider>
-        <Layout />
-      </DataServiceProvider>
-    );
+  it('renders filters and graph sections', async () => {
+    await act(async () => {
+      render(
+        <DataServiceProvider>
+          <Layout />
+        </DataServiceProvider>
+      );
+    });
 
     expect(screen.getByText('Type')).toBeInTheDocument();
-    expect(screen.getByText('Graph Component')).toBeInTheDocument();
+    expect(screen.getByText('Usage Analytics Over Time')).toBeInTheDocument();
   });
 
-  it('renders footer with GitHub link', () => {
-    render(
-      <DataServiceProvider>
-        <Layout />
-      </DataServiceProvider>
-    );
+  it('renders footer with GitHub link', async () => {
+    await act(async () => {
+      render(
+        <DataServiceProvider>
+          <Layout />
+        </DataServiceProvider>
+      );
+    });
     const footer = screen.getByText('GitHub');
 
     expect(footer).toBeInTheDocument();

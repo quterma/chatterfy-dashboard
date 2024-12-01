@@ -1,7 +1,8 @@
+import { FC } from 'react';
 import { FiltersComponent } from '../FiltersComponent/FiltersComponent';
-import { Graph } from '../Graph/Graph';
+import { GraphComponent } from '../GraphComponent/GraphComponent';
 
-export const Layout: React.FC = () => {
+export const Layout: FC = () => {
   return (
     <div className="min-h-screen flex flex-col min-w-[200px]">
       <header className="bg-gray-100 p-4 shadow-md text-center sm:text-left">
@@ -21,7 +22,7 @@ export const Layout: React.FC = () => {
         </aside>
 
         <section className="flex-1 bg-white p-4 rounded shadow min-h-[300px]">
-          <Graph />
+          <GraphComponent />
         </section>
       </main>
 
